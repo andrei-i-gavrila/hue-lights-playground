@@ -34,7 +34,7 @@ def get_username():
         with open(username_filename, 'r') as f:
             return f.read()
     else:
-        username = make_request("api", {'devicetype': 'andrei'}, "POST")['success']['username'][0]
+        username = make_request("api", {'devicetype': 'andrei'}, "POST")[0]['success']['username']
         with open(username_filename, 'w') as f:
             f.write(username)
         return username
